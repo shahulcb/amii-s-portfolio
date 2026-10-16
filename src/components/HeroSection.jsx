@@ -14,8 +14,8 @@ export default function HeroSection({ designer, onContactClick }) {
 
       {/* Top floating pill stickers */}
       <div className="hero-stickers-row">
-        <span className="pill-sticker sticker-made-things">MADE THINGS</span>
-        <span className="pill-sticker sticker-sweat-details">SWEAT THE DETAILS</span>
+        <span className="pill-sticker sticker-made-things">OPTIMIZED OPS</span>
+        <span className="pill-sticker sticker-sweat-details">DATA TO IMPACT</span>
       </div>
 
       {/* Hand-drawn Orange Box with Pixel ROBIN */}
@@ -74,7 +74,7 @@ export default function HeroSection({ designer, onContactClick }) {
         <h2 className="main-tagline">
           {designer.tagline.line1} <span className="emoji-icon">🎯</span>
           <br />
-          {designer.tagline.line2} <span className="emoji-icon">🌸</span>
+          {designer.tagline.line2} <span className="emoji-icon">📈</span>
         </h2>
 
         <div className="avatar-stamp" title="Robin">

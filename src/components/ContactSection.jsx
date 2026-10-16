@@ -149,12 +149,12 @@ export default function ContactSection({ designer }) {
                   value={formData.projectType}
                   onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                 >
-                  <option>End-to-End Product Design</option>
-                  <option>Mobile App (iOS / Android)</option>
-                  <option>Design System & Tokens</option>
-                  <option>Interactive Prototyping</option>
-                  <option>UX Audit & Redesign</option>
-                  <option>Full-time Product Designer Role</option>
+                  <option>End-to-End Business Analysis & BRD</option>
+                  <option>Process Optimization & BPMN Mapping</option>
+                  <option>SQL & BI Dashboards (Power BI / Tableau)</option>
+                  <option>Agile Scrum Product Owner / BA</option>
+                  <option>Financial Feasibility & ROI Modeling</option>
+                  <option>Full-Time Business Analyst Role</option>
                 </select>
               </div>
 

@@ -1,18 +1,18 @@
 export const portfolioData = {
   designer: {
     name: "ROBIN",
-    role: "Product Designer",
+    role: "Business Analyst",
     location: "Chicago, IL",
-    status: "OPEN TO NEW WORK AND GOOD PROBLEMS",
+    status: "OPEN TO NEW ROLES AND STRATEGIC PROBLEMS",
     tagline: {
-      line1: "I design software that",
-      line2: "gets out of your way."
+      line1: "I turn complex data",
+      line2: "into decisions that move teams."
     },
-    bio: "I'm a product designer who gets a little too excited about making complicated things feel simple. ✨ I care about the small details, the edge cases everyone forgets, and shipping work that genuinely makes someone's day easier. 🎨",
+    bio: "I'm a business analyst who gets a little too excited about untangling messy workflows and discovering the story hidden in the data. 📊 I care about cross-functional alignment, the edge-case requirements everyone overlooks, and delivering actionable insights that genuinely accelerate growth. 💡",
     avatar: "/images/robin-avatar.jpg",
     workspace: "/images/workspace.jpg",
-    email: "robin.design@example.com",
-    availability: "Available for Q4 2026 & 2027 projects",
+    email: "robin.analyst@example.com",
+    availability: "Available for Full-Time & Consulting Roles • 2026 / 2027",
     socials: {
       linkedin: "https://linkedin.com",
       dribbble: "https://dribbble.com",
@@ -24,40 +24,40 @@ export const portfolioData = {
 
   skills: [
     {
-      id: "interaction",
-      name: "Interaction Design",
+      id: "requirements",
+      name: "Requirements Gathering",
       color: "#fbbf24",
       bgClass: "pill-yellow",
-      icon: "sparkles",
-      stampEmoji: "🌼",
-      description: "Crafting intuitive micro-interactions, responsive flows, and friction-free user journeys."
+      icon: "clipboard",
+      stampEmoji: "📋",
+      description: "Authoring comprehensive BRDs, PRDs, user stories, and acceptance criteria (Given-When-Then) that bridge business stakeholders and engineers."
     },
     {
-      id: "prototyping",
-      name: "Prototyping",
+      id: "modeling",
+      name: "Data & Financial Modeling",
       color: "#10b981",
       bgClass: "pill-green",
-      icon: "code",
-      stampEmoji: "🎨",
-      description: "From rapid lo-fi paper sketches to production-grade interactive React & Figma prototypes."
+      icon: "trending-up",
+      stampEmoji: "📊",
+      description: "Advanced SQL, scenario modeling, forecasting, ROI feasibility analysis, and automated KPI pipelines."
     },
     {
-      id: "research",
-      name: "User Research",
+      id: "process",
+      name: "Process Optimization",
       color: "#ec4899",
       bgClass: "pill-pink",
-      icon: "users",
-      stampEmoji: "🧩",
-      description: "Contextual inquiry, user interviews, usability audits, and turning raw feedback into product direction."
+      icon: "git-branch",
+      stampEmoji: "⚙️",
+      description: "BPMN 2.0 mapping, gap analysis, root-cause diagnostics, and workflow automation reducing cycle times."
     },
     {
-      id: "motion",
-      name: "Motion Design",
+      id: "stakeholder",
+      name: "Stakeholder Alignment",
       color: "#2563eb",
       bgClass: "pill-blue",
-      icon: "play",
-      stampEmoji: "👀",
-      description: "Meaningful animation curves that communicate hierarchy, spatial continuity, and delight."
+      icon: "users",
+      stampEmoji: "🤝",
+      description: "Facilitating discovery workshops, executive dashboard presentations (Tableau/Power BI), and sprint backlog prioritization."
     }
   ],
 
@@ -67,40 +67,35 @@ export const portfolioData = {
       number: "01",
       tabLabel: "PROJECT 01",
       date: "MAR 2, 2026",
-      title: "Tandem",
-      subtitle: "From 'who owes who' to money that finally feels shared.",
-      category: "Fintech & Mobile App",
+      title: "FinFlow Ledger",
+      subtitle: "From manual reconciliation to 99.8% automated straight-through ledger settlement.",
+      category: "Fintech & Financial Operations Analytics",
       theme: "dark",
       heroBg: "#0f1115",
       accentColor: "#2563eb",
       badgeColor: "#3b82f6",
       image: "/images/tandem.jpg",
-      tags: ["Mobile iOS", "Fintech", "Design System", "Interaction Design"],
+      tags: ["SQL & ETL", "BPMN 2.0 Mapping", "Financial Modeling", "BRD / User Stories"],
       stats: [
-        { label: "Active Users", value: "240k+" },
-        { label: "App Store Rating", value: "4.9 ★" },
-        { label: "Bill Settlement Speed", value: "3.2x faster" }
+        { label: "Reconciliation Speed", value: "4.5x faster" },
+        { label: "Annual Cost Saved", value: "$1.2M" },
+        { label: "Ledger SLA Accuracy", value: "99.8%" }
       ],
-      overview: "Tandem is a collaborative group expense and bill-splitting platform engineered to eliminate the awkwardness of peer-to-peer debts. Traditional payment apps treat money as a solo transactional chore; Tandem creates shared living ledgers with automated receipt OCR, instant split calculations, and one-tap settling.",
-      problem: "Traditional bill-splitting apps like Splitwise and Venmo require tedious manual calculation, create uncomfortable reminder dynamics between friends, and break down when bills have uneven tips, itemized taxes, or varying participant shares.",
-      solution: "We designed a camera-first smart receipt breakdown, transparent live calculation rooms, and micro-delights (like customizable animated thank-you stickers) that turn debt settling into a positive bonding moment.",
+      overview: "FinFlow is an enterprise payment reconciliation system engineered to eliminate manual multi-currency debt mismatches. As the Lead Business Analyst, I scoped end-to-end business requirements, standardized ledger data schemas across 5 banking partners, and architected automated anomaly-detection workflows.",
+      problem: "The operations team lost 180+ hours each month manually cross-referencing multi-currency bank statements with PostgreSQL transactional databases, causing multi-day settlement delays and audit vulnerability.",
+      solution: "Defined rule-based auto-reconciliation specifications, mapped AS-IS vs. TO-BE processes, and designed real-time exception dashboards with automated notifications for discrepancies over $1,000.",
       deliverables: [
-        "End-to-end iOS & Android App Architecture",
-        "Camera-based AI receipt scanner interface",
-        "Multi-currency dynamic split engine",
-        "Design token system with 80+ components"
+        "Business Requirements Document (BRD) & Functional Specs",
+        "BPMN 2.0 Process Workflow Maps",
+        "Data Dictionary & Cross-Platform Entity Relationship Model",
+        "User Acceptance Testing (UAT) Test Plan & Sign-off Matrix"
       ],
       prototypeData: {
-        billName: "Dinner at La Table",
-        total: 248.60,
-        participants: [
-          { name: "Robin (You)", share: 41.43, avatar: "/images/robin-avatar.jpg", paid: true },
-          { name: "Sarah J.", share: 41.43, avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150", paid: false },
-          { name: "Mike L.", share: 41.44, avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150", paid: true },
-          { name: "Emily R.", share: 41.43, avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150", paid: false },
-          { name: "Ben W.", share: 41.44, avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150", paid: false },
-          { name: "David K.", share: 41.43, avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150", paid: false }
-        ]
+        type: "reconciliation",
+        monthlyTransactions: 24000,
+        manualHourlyCost: 45,
+        hoursSavedPerMonth: 160,
+        discrepancyThreshold: 1000
       }
     },
     {
@@ -108,40 +103,41 @@ export const portfolioData = {
       number: "02",
       tabLabel: "PROJECT 02",
       date: "JAN 2, 2026",
-      title: "Forge",
-      subtitle: "Getting a new engineer from day one to shipping without the panic.",
-      category: "Developer Experience & Web Platform",
+      title: "Forge Ops",
+      subtitle: "Diagnosing delivery bottlenecks and boosting sprint predictability by 42%.",
+      category: "Agile Delivery & Engineering Velocity Analytics",
       theme: "yellow",
       heroBg: "#f5be38",
       accentColor: "#18181b",
       badgeColor: "#000000",
       image: "/images/forge.jpg",
-      tags: ["Developer Tools", "Web Dashboard", "Design Systems", "Onboarding"],
+      tags: ["Agile Scrum", "Jira Analytics", "Capacity Planning", "UAT Framework"],
       stats: [
-        { label: "Onboarding Time", value: "-65%" },
-        { label: "Engineering Teams", value: "85+" },
-        { label: "First PR Merge", value: "Day 2 (avg)" }
+        { label: "Sprint Predictability", value: "+42%" },
+        { label: "Cycle Time Reduction", value: "-3.4 days" },
+        { label: "UAT Defect Leakage", value: "< 2.1%" }
       ],
-      overview: "Forge transforms the chaotic, fragmented developer onboarding experience into a guided, gamified journey. It integrates IDE setup, environment containerization, codebase architecture tours, and mentor matchmaking into a single focused command center.",
-      problem: "Software engineers typically spend their first 2–3 weeks struggling with broken local environments, outdated README files, tribal knowledge barriers, and anxiety around pushing their initial pull request.",
-      solution: "Forge introduced verified 1-click cloud sandbox environments, interactive architecture maps linked to Git repos, and step-by-step checklist validation that automatically verifies each CLI setup command.",
+      overview: "Forge Ops is an engineering workflow optimization initiative spanning 14 squads. As the Business Analyst, I conducted value-stream mapping, analyzed 18 months of Jira delivery data, and aligned product management and engineering leadership on objective story sizing and capacity planning.",
+      problem: "Engineering squads suffered from 38% scope churn mid-sprint, delayed release milestones, and unclear acceptance criteria that generated endless revision loops between QA and developers.",
+      solution: "Standardized Given-When-Then Gherkin acceptance criteria, automated Jira-to-Tableau burn-up reports, and instituted pre-sprint Definition of Ready (DoR) gate reviews.",
       deliverables: [
-        "Web App Platform Design & UI Components",
-        "Terminal output visualization and error diagnosis",
-        "Interactive Roadmap and Milestone Tracker",
-        "Mentor pairing and live pairing notifications"
+        "Value Stream Mapping & Bottleneck Diagnosis Report",
+        "Standardized Epic & User Story Template Suite",
+        "Executive Velocity & Capacity Allocation Dashboard",
+        "Change Management Playbook & Team Training Curriculum"
       ],
       prototypeData: {
-        currentStep: "Configure IDE & Extensions",
-        completedSteps: 3,
-        totalSteps: 6,
-        checklist: [
-          { id: 1, title: "Setup Dev Environment & SSH Keys", status: "completed" },
-          { id: 2, title: "Install Node.js 22 & Docker Desktop", status: "completed" },
-          { id: 3, title: "Clone core monorepo repository", status: "completed" },
-          { id: 4, title: "Configure IDE extensions & Linting rules", status: "active" },
-          { id: 5, title: "Run local development server & test suite", status: "pending" },
-          { id: 6, title: "Submit first Good First Issue pull request", status: "pending" }
+        type: "agile",
+        sprintTargetPoints: 65,
+        initialPlanned: 60,
+        scopeCreepPoints: 15,
+        milestones: [
+          { id: 1, title: "Stakeholder Discovery & Problem Definition", status: "completed" },
+          { id: 2, title: "Historical Jira Delivery Data Extraction & SQL Querying", status: "completed" },
+          { id: 3, title: "AS-IS Process Flowchart & Value Stream Map", status: "completed" },
+          { id: 4, title: "Draft BRD & User Stories with Acceptance Criteria", status: "active" },
+          { id: 5, title: "UAT Test Scripts Execution & Defect Triage", status: "pending" },
+          { id: 6, title: "Post-Implementation ROI & Velocity Audit", status: "pending" }
         ]
       }
     },
@@ -150,28 +146,28 @@ export const portfolioData = {
       number: "03",
       tabLabel: "PROJECT 03",
       date: "NOV 18, 2025",
-      title: "Nebula DS",
-      subtitle: "A multi-brand design system bridging the gap between Figma and production React.",
-      category: "Design System & Component Library",
+      title: "Prism BI",
+      subtitle: "Translating 14M customer touchpoints into an executive retention and churn forecasting system.",
+      category: "Business Intelligence & Churn Analytics",
       theme: "dark-purple",
       heroBg: "#1a162b",
       accentColor: "#8b5cf6",
       badgeColor: "#7c3aed",
       image: "/images/prism.jpg",
-      tags: ["Design System", "Tokens", "Accessibility", "Figma Plugins"],
+      tags: ["Power BI / Tableau", "SQL Cohort Analysis", "Churn Risk Modeling", "Executive Strategy"],
       stats: [
-        { label: "Component Tokens", value: "1,200+" },
-        { label: "Team Adoption", value: "100%" },
-        { label: "WCAG Compliance", value: "AAA" }
+        { label: "ARR Churn Mitigated", value: "$2.4M" },
+        { label: "At-Risk Flag Accuracy", value: "91.4%" },
+        { label: "C-Suite Dashboard Adoption", value: "100%" }
       ],
-      overview: "Nebula is an enterprise design system supporting 4 distinct customer-facing web products. Featuring automated Figma-to-Code sync, multi-theme support (dark, light, high-contrast), and zero-friction accessibility tokens.",
-      problem: "Designers and engineers were losing hundreds of hours to design token drift, inaccessible color pairings, and duplicated component code across separate product repositories.",
-      solution: "Created an automated single-source-of-truth token pipeline, paired with accessible React primitives and an interactive live documentation playground with copy-paste code snippets.",
+      overview: "Prism BI unified fragmented CRM, Stripe billing, and product usage telemetries into an executive-facing early warning churn forecasting dashboard. Defined metric definitions, data governance standards, and customer retention triggers.",
+      problem: "Enterprise customer churn was noticed only after contract renewal cancellation. Cross-functional sales, customer success, and product teams lacked a unified definition of an 'active account'.",
+      solution: "Formulated a composite Health Score algorithm (0-100), automated daily alerts for at-risk accounts showing 30-day inactivity drops, and provided customer success teams with proactive retention action playbooks.",
       deliverables: [
-        "Complete Token Architecture (Colors, Typography, Elevation, Motion)",
-        "Figma Component Library with Variant Properties",
-        "React UI Component Suite with Storybook Docs",
-        "Accessibility Linter integration for design reviews"
+        "Customer Health Score Metric Definition & Data Dictionary",
+        "Interactive Power BI Dashboard with Drill-Down Filters",
+        "Automated Slack / Email Alert Integration Schema",
+        "Executive Board Presentation on Retention Strategy"
       ]
     }
   ],
@@ -180,7 +176,7 @@ export const portfolioData = {
     {
       id: "sticker-1",
       type: "sticker",
-      text: "SHIP IT 🚀",
+      text: "DATA DRIVEN 📊",
       bg: "#fde047",
       color: "#000",
       rotation: -6
@@ -188,7 +184,7 @@ export const portfolioData = {
     {
       id: "sticker-2",
       type: "sticker",
-      text: "PIXELS MATTER 🔍",
+      text: "SQL QUERY MASTER 🔍",
       bg: "#a7f3d0",
       color: "#000",
       rotation: 8
@@ -196,7 +192,7 @@ export const portfolioData = {
     {
       id: "sticker-3",
       type: "sticker",
-      text: "COFFEE FIRST ☕",
+      text: "GAP ANALYSIS ⚙️",
       bg: "#fbcfe8",
       color: "#000",
       rotation: -3
@@ -204,7 +200,7 @@ export const portfolioData = {
     {
       id: "sticker-4",
       type: "sticker",
-      text: "SWEAT THE DETAILS 💧",
+      text: "BRD APPROVED ✅",
       bg: "#fed7aa",
       color: "#000",
       rotation: 5

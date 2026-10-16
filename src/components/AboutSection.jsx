@@ -44,20 +44,25 @@ export default function AboutSection({ designer, skills, onSkillClick }) {
 
             {/* 4 colorful wavy/scalloped skill badges */}
             <div className="skills-badge-grid">
-              {skills.map((skill) => (
-                <div 
-                  key={skill.id} 
-                  className="skill-pill-pair"
-                  onClick={() => onSkillClick && onSkillClick(skill)}
-                >
-                  <div className={`wavy-badge wavy-${skill.id === 'interaction' ? 'yellow' : skill.id === 'prototyping' ? 'green' : skill.id === 'research' ? 'pink' : 'blue'}`}>
-                    {skill.name}
+              {skills.map((skill, index) => {
+                const colors = ['yellow', 'green', 'pink', 'blue'];
+                const colorClass = colors[index % colors.length];
+                return (
+                  <div 
+                    key={skill.id} 
+                    className="skill-pill-pair"
+                    onClick={() => onSkillClick && onSkillClick(skill)}
+                    title={skill.description}
+                  >
+                    <div className={`wavy-badge wavy-${colorClass}`}>
+                      {skill.name}
+                    </div>
+                    <div className={`stamp-badge stamp-${colorClass}`} title={`${skill.name} stamp`}>
+                      {skill.stampEmoji}
+                    </div>
                   </div>
-                  <div className={`stamp-badge stamp-${skill.id === 'interaction' ? 'yellow' : skill.id === 'prototyping' ? 'green' : skill.id === 'research' ? 'pink' : 'blue'}`} title={`${skill.name} stamp`}>
-                    {skill.stampEmoji}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
