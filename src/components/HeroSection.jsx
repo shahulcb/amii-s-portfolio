@@ -14,8 +14,8 @@ export default function HeroSection({ designer, onContactClick }) {
 
       {/* Top floating pill stickers */}
       <div className="hero-stickers-row">
-        <span className="pill-sticker sticker-made-things">OPTIMIZED OPS</span>
-        <span className="pill-sticker sticker-sweat-details">DATA TO IMPACT</span>
+        <span className="pill-sticker sticker-made-things">CASE STUDIES</span>
+        <span className="pill-sticker sticker-sweat-details">RECRUITER READY</span>
       </div>
 
       {/* Hand-drawn Orange Box with Pixel ROBIN */}
@@ -82,7 +82,7 @@ export default function HeroSection({ designer, onContactClick }) {
         </div>
       </div>
 
-      {/* CTA Button: > CONTACT ME */}
+      {/* CTA Button: > RECRUITER / GET IN TOUCH */}
       <div>
         <button
           id="hero-contact-btn"
@@ -90,7 +90,7 @@ export default function HeroSection({ designer, onContactClick }) {
           onClick={onContactClick}
         >
           <span className="cta-icon-box">&gt;</span>
-          <span>CONTACT ME</span>
+          <span>RECRUITER / GET IN TOUCH</span>
         </button>
       </div>
     </section>

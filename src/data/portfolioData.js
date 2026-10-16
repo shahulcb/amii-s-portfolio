@@ -3,16 +3,17 @@ export const portfolioData = {
     name: "ROBIN",
     role: "Business Analyst",
     location: "Chicago, IL",
-    status: "OPEN TO NEW ROLES AND STRATEGIC PROBLEMS",
+    status: "OPEN TO FULL-TIME BA ROLES & RECRUITER INQUIRIES",
     tagline: {
       line1: "I turn complex data",
       line2: "into decisions that move teams."
     },
-    bio: "I'm a business analyst who gets a little too excited about untangling messy workflows and discovering the story hidden in the data. 📊 I care about cross-functional alignment, the edge-case requirements everyone overlooks, and delivering actionable insights that genuinely accelerate growth. 💡",
+    bio: "I'm a business analyst who loves diving deep into business workflows, analyzing complex datasets, and collaborating with cross-functional product & engineering teams to deliver high-impact systems. 📊 This site showcases my end-to-end case studies, technical requirements, and process artifacts. If you're a recruiter or hiring manager looking for a dedicated Business Analyst, let's connect! 🤝",
     avatar: "/images/robin-avatar.jpg",
     workspace: "/images/workspace.jpg",
     email: "robin.analyst@example.com",
-    availability: "Available for Full-Time & Consulting Roles • 2026 / 2027",
+    availability: "Open to Full-Time Business Analyst Roles (On-site Chicago / Hybrid / Remote)",
+    resumeUrl: "#",
     socials: {
       linkedin: "https://linkedin.com",
       dribbble: "https://dribbble.com",

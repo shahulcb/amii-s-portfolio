@@ -1,52 +1,40 @@
 import React, { useState } from 'react';
-import { Send, Copy, Check, Mail, MapPin, Calendar, Heart } from 'lucide-react';
+import { Mail, Copy, Check, ExternalLink, MapPin, Briefcase, Clock, Send } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function ContactSection({ designer }) {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    projectType: 'Design & Prototyping',
-    timeline: 'Within 1-2 months',
-    message: ''
-  });
-
   const [copied, setCopied] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+
+  const emailSubject = encodeURIComponent("Business Analyst Opportunity — Inquiring via Portfolio");
+  const emailBody = encodeURIComponent("Hi Robin,\n\nI reviewed your portfolio and would love to connect regarding an open Business Analyst role on our team.\n\nBest regards,\n");
+  
+  const mailtoLink = `mailto:${designer.email}?subject=${emailSubject}&body=${emailBody}`;
+  const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(designer.email)}&su=${emailSubject}&body=${emailBody}`;
+  const outlookLink = `https://outlook.live.com/mail/0/deeplink/compose?to=${encodeURIComponent(designer.email)}&subject=${emailSubject}&body=${emailBody}`;
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(designer.email);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
-      alert('Please fill out your name, email, and message!');
-      return;
-    }
-
     try {
       confetti({
-        particleCount: 80,
-        spread: 70,
-        origin: { y: 0.6 }
+        particleCount: 40,
+        spread: 60,
+        origin: { y: 0.7 }
       });
     } catch {
-      // fallback
+      // safe fallback
     }
-
-    setSubmitted(true);
+    setTimeout(() => setCopied(false), 2500);
   };
 
   return (
     <section id="contact" className="contact-section">
       {/* Sticky Note Box */}
-      <div className="sticky-note-contact">
+      <div className="sticky-note-contact" style={{ textAlign: 'center', padding: '36px 24px' }}>
         <div className="sticky-tape-top"></div>
 
-        <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+        {/* Top Status Pill */}
+        <div style={{ marginBottom: '18px' }}>
           <div style={{ 
             display: 'inline-flex', 
             alignItems: 'center', 
@@ -55,189 +43,220 @@ export default function ContactSection({ designer }) {
             fontSize: '11px', 
             fontWeight: '700',
             background: '#ffffff',
-            padding: '3px 10px',
+            padding: '4px 14px',
             borderRadius: '9999px',
             border: '1.5px solid #111418',
-            marginBottom: '10px'
+            boxShadow: '1px 1px 0px #111418'
           }}>
             <span className="dot-blue"></span>
             <span>{designer.availability}</span>
           </div>
-
-          <h3 style={{ 
-            fontFamily: 'var(--font-sans)', 
-            fontSize: '28px', 
-            fontWeight: '800', 
-            color: '#111418',
-            letterSpacing: '-0.02em' 
-          }}>
-            Let's build something genuinely good.
-          </h3>
-          <p style={{ fontFamily: 'var(--font-hand)', fontSize: '18px', color: '#4b5563', marginTop: '4px' }}>
-            Have a project in mind, an edge case to solve, or just want to chat design? Say hello!
-          </p>
         </div>
 
-        {submitted ? (
-          <div style={{ 
-            background: '#ffffff', 
-            border: '1.5px solid #111418', 
-            borderRadius: '8px', 
-            padding: '36px', 
-            textAlign: 'center',
-            boxShadow: '3px 3px 0px #111418'
-          }}>
-            <div style={{ fontSize: '42px', marginBottom: '12px' }}>🎉</div>
-            <h4 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>
-              Message sent! Thanks for reaching out.
-            </h4>
-            <p style={{ color: '#4b5563', fontSize: '14px', marginBottom: '18px' }}>
-              I'll get back to you within 24 hours at <strong>{formData.email}</strong>.
-            </p>
-            <button
-              onClick={() => {
-                setSubmitted(false);
-                setFormData({ name: '', email: '', projectType: 'Design & Prototyping', timeline: 'Within 1-2 months', message: '' });
-              }}
-              style={{ 
-                background: '#111418', 
-                color: '#ffffff', 
-                border: 'none', 
-                borderRadius: '4px', 
-                padding: '8px 18px', 
-                fontFamily: 'var(--font-mono)',
-                fontSize: '11px',
-                cursor: 'pointer'
-              }}
-            >
-              SEND ANOTHER NOTE
-            </button>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '14px' }}>
-              <div className="contact-form-group">
-                <label className="contact-label">Your Name</label>
-                <input
-                  type="text"
-                  placeholder="Alex Rivera"
-                  className="contact-input"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                />
-              </div>
-
-              <div className="contact-form-group">
-                <label className="contact-label">Your Email</label>
-                <input
-                  type="email"
-                  placeholder="alex@company.com"
-                  className="contact-input"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                />
-              </div>
-            </div>
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '14px' }}>
-              <div className="contact-form-group">
-                <label className="contact-label">Project Scope</label>
-                <select
-                  className="contact-input"
-                  value={formData.projectType}
-                  onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                >
-                  <option>End-to-End Business Analysis & BRD</option>
-                  <option>Process Optimization & BPMN Mapping</option>
-                  <option>SQL & BI Dashboards (Power BI / Tableau)</option>
-                  <option>Agile Scrum Product Owner / BA</option>
-                  <option>Financial Feasibility & ROI Modeling</option>
-                  <option>Full-Time Business Analyst Role</option>
-                </select>
-              </div>
-
-              <div className="contact-form-group">
-                <label className="contact-label">Timeline</label>
-                <select
-                  className="contact-input"
-                  value={formData.timeline}
-                  onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                >
-                  <option>ASAP (Next 2-3 weeks)</option>
-                  <option>Within 1-2 months</option>
-                  <option>Q1 2027</option>
-                  <option>Flexible / Exploring</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="contact-form-group">
-              <label className="contact-label">What are you working on?</label>
-              <textarea
-                rows="4"
-                placeholder="Tell me a bit about your product, team, and goals..."
-                className="contact-textarea"
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit" id="submit-contact-btn" className="contact-submit-btn">
-              <Send size={14} />
-              <span>SEND MESSAGE</span>
-            </button>
-          </form>
-        )}
-
-        {/* Quick Contact & Direct Details */}
-        <div style={{ 
-          marginTop: '28px', 
-          paddingTop: '20px', 
-          borderTop: '1px dashed rgba(0,0,0,0.2)',
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: '12px'
+        <h3 style={{ 
+          fontFamily: 'var(--font-sans)', 
+          fontSize: 'clamp(24px, 4vw, 34px)', 
+          fontWeight: '800', 
+          color: '#111418',
+          letterSpacing: '-0.02em',
+          marginBottom: '8px'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Mail size={15} color="#111418" />
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: '700' }}>
-              {designer.email}
-            </span>
-            <button
-              type="button"
-              onClick={handleCopyEmail}
-              title="Copy email to clipboard"
-              style={{ 
-                background: '#ffffff', 
-                border: '1px solid #111418', 
-                borderRadius: '3px', 
-                padding: '3px 8px', 
-                fontFamily: 'var(--font-mono)',
-                fontSize: '10px',
-                cursor: 'pointer',
+          Get in touch directly.
+        </h3>
+
+        <p style={{ 
+          fontFamily: 'var(--font-hand)', 
+          fontSize: '20px', 
+          color: '#4b5563', 
+          maxWidth: '560px', 
+          margin: '0 auto 28px',
+          lineHeight: '1.4'
+        }}>
+          Recruiters and hiring managers: feel free to reach out directly via email to discuss opportunities or request my full resume!
+        </p>
+
+        {/* Prominent Email Card */}
+        <div style={{
+          background: '#ffffff',
+          border: '2px solid #111418',
+          borderRadius: '8px',
+          padding: '24px 20px',
+          maxWidth: '560px',
+          margin: '0 auto 24px',
+          boxShadow: '4px 5px 0px #111418',
+          position: 'relative'
+        }}>
+          <div style={{ 
+            fontFamily: 'var(--font-mono)', 
+            fontSize: '11px', 
+            color: '#6b7280', 
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
+            marginBottom: '6px'
+          }}>
+            PRIMARY DIRECT EMAIL
+          </div>
+
+          <div style={{ 
+            fontFamily: 'var(--font-mono)', 
+            fontSize: 'clamp(18px, 3.5vw, 24px)', 
+            fontWeight: '800', 
+            color: '#111418',
+            marginBottom: '18px',
+            wordBreak: 'break-all'
+          }}>
+            {designer.email}
+          </div>
+
+          {/* Primary Action Buttons */}
+          <div style={{ 
+            display: 'flex', 
+            flexWrap: 'wrap', 
+            gap: '10px', 
+            justifyContent: 'center' 
+          }}>
+            {/* Opens default mail service */}
+            <a
+              id="open-mail-client-btn"
+              href={mailtoLink}
+              style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '4px'
+                gap: '8px',
+                background: '#111418',
+                color: '#ffffff',
+                border: '1.5px solid #111418',
+                borderRadius: '6px',
+                padding: '12px 24px',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '12px',
+                fontWeight: '700',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                cursor: 'pointer',
+                boxShadow: '2px 2px 0px #111418',
+                transition: 'all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#2563eb';
+                e.currentTarget.style.transform = 'translate(-1px, -1px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = '#111418';
+                e.currentTarget.style.transform = 'translate(0, 0)';
               }}
             >
-              {copied ? <Check size={11} color="#16a34a" /> : <Copy size={11} />}
-              <span>{copied ? 'COPIED!' : 'COPY'}</span>
+              <Mail size={16} />
+              <span>SEND EMAIL (OPEN MAIL APP)</span>
+            </a>
+
+            {/* Copy Email Button */}
+            <button
+              id="copy-email-btn"
+              type="button"
+              onClick={handleCopyEmail}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                background: '#ffffff',
+                color: '#111418',
+                border: '1.5px solid #111418',
+                borderRadius: '6px',
+                padding: '12px 20px',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '12px',
+                fontWeight: '700',
+                cursor: 'pointer',
+                boxShadow: '2px 2px 0px #111418',
+                transition: 'all 0.15s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#fef08a';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = '#ffffff';
+              }}
+            >
+              {copied ? <Check size={15} color="#16a34a" /> : <Copy size={15} />}
+              <span>{copied ? 'COPIED TO CLIPBOARD!' : 'COPY EMAIL'}</span>
             </button>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', fontFamily: 'var(--font-mono)', fontSize: '11px', color: '#4b5563' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <MapPin size={13} /> {designer.location}
-            </span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <Calendar size={13} /> CT (UTC-5)
-            </span>
+          {/* Webmail Shortcuts */}
+          <div style={{ 
+            marginTop: '16px', 
+            paddingTop: '14px', 
+            borderTop: '1px dashed #e5e7eb',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '16px',
+            flexWrap: 'wrap',
+            fontFamily: 'var(--font-mono)',
+            fontSize: '11px'
+          }}>
+            <span style={{ color: '#6b7280' }}>Webmail:</span>
+            <a 
+              href={gmailLink} 
+              target="_blank" 
+              rel="noreferrer"
+              style={{ color: '#dc2626', textDecoration: 'none', fontWeight: '700', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+            >
+              <span>Compose in Gmail</span>
+              <ExternalLink size={11} />
+            </a>
+            <span style={{ color: '#cbd5e1' }}>•</span>
+            <a 
+              href={outlookLink} 
+              target="_blank" 
+              rel="noreferrer"
+              style={{ color: '#0284c7', textDecoration: 'none', fontWeight: '700', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+            >
+              <span>Compose in Outlook</span>
+              <ExternalLink size={11} />
+            </a>
           </div>
+        </div>
+
+        {/* Quick Candidate Badges for Recruiters */}
+        <div style={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center', 
+          gap: '20px', 
+          flexWrap: 'wrap',
+          fontFamily: 'var(--font-mono)', 
+          fontSize: '11px', 
+          color: '#374151',
+          paddingTop: '8px'
+        }}>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+            <Briefcase size={14} color="#111418" /> Full-Time Roles
+          </span>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+            <MapPin size={14} color="#111418" /> {designer.location} (CT)
+          </span>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+            <Clock size={14} color="#111418" /> &lt; 24h Response
+          </span>
+          <a
+            href={designer.socials.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '4px',
+              color: '#2563eb',
+              fontWeight: '700',
+              textDecoration: 'none'
+            }}
+          >
+            <span>Connect on LinkedIn</span>
+            <ExternalLink size={12} />
+          </a>
         </div>
       </div>
     </section>

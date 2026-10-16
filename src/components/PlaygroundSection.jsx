@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import { Sparkles, RefreshCw, Plus, Smile, Flame, Coffee, Heart } from 'lucide-react';
+import { Sparkles, RefreshCw, Plus } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 const STICKER_PRESETS = [
-  { text: "SHIP IT 🚀", bg: "#fde047", color: "#111418" },
-  { text: "PIXELS MATTER 🔍", bg: "#a7f3d0", color: "#111418" },
-  { text: "SWEAT THE DETAILS 💧", bg: "#fed7aa", color: "#111418" },
-  { text: "COFFEE FIRST ☕", bg: "#fbcfe8", color: "#111418" },
-  { text: "GOOD VIBES ONLY ✨", bg: "#bfdbfe", color: "#111418" },
-  { text: "KEEP IT SIMPLE 🎯", bg: "#ddd6fe", color: "#111418" }
+  { text: "DATA DRIVEN 📊", bg: "#fde047", color: "#111418" },
+  { text: "SQL QUERY MASTER 🔍", bg: "#a7f3d0", color: "#111418" },
+  { text: "GAP ANALYSIS ⚙️", bg: "#fbcfe8", color: "#111418" },
+  { text: "BRD APPROVED ✅", bg: "#fed7aa", color: "#111418" },
+  { text: "USER STORIES 📝", bg: "#bfdbfe", color: "#111418" },
+  { text: "OPTIMIZED OPS 🚀", bg: "#ddd6fe", color: "#111418" }
 ];
 
 export default function PlaygroundSection() {
   const [stickers, setStickers] = useState([
-    { id: 1, text: "SHIP IT 🚀", x: 40, y: 30, rotation: -6, bg: "#fde047" },
-    { id: 2, text: "PIXELS MATTER 🔍", x: 260, y: 50, rotation: 7, bg: "#a7f3d0" },
-    { id: 3, text: "SWEAT THE DETAILS 💧", x: 120, y: 150, rotation: -4, bg: "#fed7aa" },
-    { id: 4, text: "COFFEE FIRST ☕", x: 380, y: 140, rotation: 5, bg: "#fbcfe8" }
+    { id: 1, text: "DATA DRIVEN 📊", x: 20, y: 30, rotation: -6, bg: "#fde047" },
+    { id: 2, text: "SQL QUERY MASTER 🔍", x: 180, y: 40, rotation: 7, bg: "#a7f3d0" },
+    { id: 3, text: "GAP ANALYSIS ⚙️", x: 60, y: 130, rotation: -4, bg: "#fbcfe8" },
+    { id: 4, text: "BRD APPROVED ✅", x: 220, y: 120, rotation: 5, bg: "#fed7aa" }
   ]);
 
   const [activeSticker, setActiveSticker] = useState(null);
@@ -30,8 +30,8 @@ export default function PlaygroundSection() {
     const newSticker = {
       id: Date.now(),
       text: preset.text,
-      x: 100 + Math.random() * 200,
-      y: 40 + Math.random() * 120,
+      x: 30 + Math.random() * 160,
+      y: 30 + Math.random() * 110,
       rotation: (Math.random() - 0.5) * 18,
       bg: preset.bg
     };
@@ -40,14 +40,14 @@ export default function PlaygroundSection() {
 
   const resetStickers = () => {
     setStickers([
-      { id: 1, text: "SHIP IT 🚀", x: 40, y: 30, rotation: -6, bg: "#fde047" },
-      { id: 2, text: "PIXELS MATTER 🔍", x: 260, y: 50, rotation: 7, bg: "#a7f3d0" },
-      { id: 3, text: "SWEAT THE DETAILS 💧", x: 120, y: 150, rotation: -4, bg: "#fed7aa" },
-      { id: 4, text: "COFFEE FIRST ☕", x: 380, y: 140, rotation: 5, bg: "#fbcfe8" }
+      { id: 1, text: "DATA DRIVEN 📊", x: 20, y: 30, rotation: -6, bg: "#fde047" },
+      { id: 2, text: "SQL QUERY MASTER 🔍", x: 180, y: 40, rotation: 7, bg: "#a7f3d0" },
+      { id: 3, text: "GAP ANALYSIS ⚙️", x: 60, y: 130, rotation: -4, bg: "#fbcfe8" },
+      { id: 4, text: "BRD APPROVED ✅", x: 220, y: 120, rotation: 5, bg: "#fed7aa" }
     ]);
   };
 
-  // Dragging logic
+  // Mouse Dragging
   const handleMouseDown = (id, e) => {
     const sticker = stickers.find(s => s.id === id);
     if (!sticker) return;
@@ -64,8 +64,8 @@ export default function PlaygroundSection() {
       if (s.id === activeSticker) {
         return {
           ...s,
-          x: Math.max(10, Math.min(540, e.clientX - offset.x)),
-          y: Math.max(10, Math.min(220, e.clientY - offset.y))
+          x: Math.max(5, Math.min(480, e.clientX - offset.x)),
+          y: Math.max(5, Math.min(220, e.clientY - offset.y))
         };
       }
       return s;
@@ -76,14 +76,48 @@ export default function PlaygroundSection() {
     setActiveSticker(null);
   };
 
+  // Touch Dragging for Mobile
+  const handleTouchStart = (id, e) => {
+    const touch = e.touches[0];
+    const sticker = stickers.find(s => s.id === id);
+    if (!sticker || !touch) return;
+    setActiveSticker(id);
+    setOffset({
+      x: touch.clientX - sticker.x,
+      y: touch.clientY - sticker.y
+    });
+  };
+
+  const handleTouchMove = (e) => {
+    if (activeSticker === null) return;
+    const touch = e.touches[0];
+    if (!touch) return;
+    setStickers(stickers.map(s => {
+      if (s.id === activeSticker) {
+        return {
+          ...s,
+          x: Math.max(5, Math.min(320, touch.clientX - offset.x)),
+          y: Math.max(5, Math.min(210, touch.clientY - offset.y))
+        };
+      }
+      return s;
+    }));
+  };
+
+  const handleTouchEnd = () => {
+    setActiveSticker(null);
+  };
+
   return (
     <section 
       id="playground" 
       className="playground-section"
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
-      <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+      <div style={{ textAlign: 'center', marginBottom: '18px' }}>
         <div style={{ 
           display: 'inline-block',
           padding: '4px 18px',
@@ -99,7 +133,7 @@ export default function PlaygroundSection() {
           ✦ playground & stickers
         </div>
         <p style={{ fontFamily: 'var(--font-hand)', fontSize: '18px', color: '#4b5563' }}>
-          Drag the stickers around on the notebook, or click to slap new ones on!
+          Drag the stickers around on the notebook, or tap to slap new ones on!
         </p>
       </div>
 
@@ -155,10 +189,10 @@ export default function PlaygroundSection() {
       <div className="playground-canvas" style={{ position: 'relative', height: '280px', overflow: 'hidden' }}>
         <div style={{ 
           position: 'absolute', 
-          bottom: '12px', 
-          right: '16px', 
+          bottom: '10px', 
+          right: '12px', 
           fontFamily: 'var(--font-mono)', 
-          fontSize: '10px', 
+          fontSize: '9px', 
           color: '#9ca3af',
           pointerEvents: 'none' 
         }}>
@@ -170,13 +204,15 @@ export default function PlaygroundSection() {
             key={st.id}
             className="draggable-sticker"
             onMouseDown={(e) => handleMouseDown(st.id, e)}
+            onTouchStart={(e) => handleTouchStart(st.id, e)}
             style={{ 
               position: 'absolute',
               left: `${st.x}px`,
               top: `${st.y}px`,
               transform: `rotate(${st.rotation}deg)`,
               background: st.bg,
-              cursor: activeSticker === st.id ? 'grabbing' : 'grab'
+              cursor: activeSticker === st.id ? 'grabbing' : 'grab',
+              touchAction: 'none'
             }}
           >
             {st.text}
