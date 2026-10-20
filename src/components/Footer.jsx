@@ -15,7 +15,7 @@ export default function Footer({ designer }) {
       </div>
 
       <div style={{ fontStyle: 'italic', fontFamily: 'var(--font-hand)', fontSize: '16px', color: '#4b5563' }}>
-        "sweat the details, make complicated things feel simple."
+        "sweat the details, turn complex data into intelligent solutions."
       </div>
 
       <div>

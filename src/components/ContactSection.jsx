@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Mail, Copy, Check, ExternalLink, MapPin, Briefcase, Clock, Send } from 'lucide-react';
+import { Mail, Copy, Check, ExternalLink, MapPin, Briefcase, Clock } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function ContactSection({ designer }) {
   const [copied, setCopied] = useState(false);
 
-  const emailSubject = encodeURIComponent("Business Analyst Opportunity — Inquiring via Portfolio");
-  const emailBody = encodeURIComponent("Hi Robin,\n\nI reviewed your portfolio and would love to connect regarding an open Business Analyst role on our team.\n\nBest regards,\n");
+  const emailSubject = encodeURIComponent("Data Analyst / ML Engineer Opportunity — Connecting via Portfolio");
+  const emailBody = encodeURIComponent("Hi Ameena,\n\nI reviewed your portfolio and projects and would love to connect regarding an opportunity on our team.\n\nBest regards,\n");
   
   const mailtoLink = `mailto:${designer.email}?subject=${emailSubject}&body=${emailBody}`;
   const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(designer.email)}&su=${emailSubject}&body=${emailBody}`;
@@ -236,11 +236,27 @@ export default function ContactSection({ designer }) {
             <Briefcase size={14} color="#111418" /> Full-Time Roles
           </span>
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-            <MapPin size={14} color="#111418" /> {designer.location} (CT)
+            <MapPin size={14} color="#111418" /> {designer.location}
           </span>
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
             <Clock size={14} color="#111418" /> &lt; 24h Response
           </span>
+          <a
+            href={designer.socials.github}
+            target="_blank"
+            rel="noreferrer"
+            style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '4px',
+              color: '#111418',
+              fontWeight: '700',
+              textDecoration: 'none'
+            }}
+          >
+            <span>GitHub Profile</span>
+            <ExternalLink size={12} />
+          </a>
           <a
             href={designer.socials.linkedin}
             target="_blank"
@@ -254,7 +270,7 @@ export default function ContactSection({ designer }) {
               textDecoration: 'none'
             }}
           >
-            <span>Connect on LinkedIn</span>
+            <span>LinkedIn</span>
             <ExternalLink size={12} />
           </a>
         </div>

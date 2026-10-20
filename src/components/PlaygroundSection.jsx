@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import { Sparkles, RefreshCw, Plus } from 'lucide-react';
+import { RefreshCw, Plus } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 const STICKER_PRESETS = [
-  { text: "DATA DRIVEN 📊", bg: "#fde047", color: "#111418" },
-  { text: "SQL QUERY MASTER 🔍", bg: "#a7f3d0", color: "#111418" },
-  { text: "GAP ANALYSIS ⚙️", bg: "#fbcfe8", color: "#111418" },
-  { text: "BRD APPROVED ✅", bg: "#fed7aa", color: "#111418" },
-  { text: "USER STORIES 📝", bg: "#bfdbfe", color: "#111418" },
-  { text: "OPTIMIZED OPS 🚀", bg: "#ddd6fe", color: "#111418" }
+  { text: "POWER BI & DAX 📊", bg: "#fde047", color: "#111418" },
+  { text: "RANDOM FOREST 🤖", bg: "#a7f3d0", color: "#111418" },
+  { text: "MEDIAPIPE CV 👁️", bg: "#fbcfe8", color: "#111418" },
+  { text: "STREAMLIT APP 🚀", bg: "#fed7aa", color: "#111418" },
+  { text: "SCIKIT-LEARN 📈", bg: "#bfdbfe", color: "#111418" },
+  { text: "AMEENA FATHIMA ✨", bg: "#ddd6fe", color: "#111418" }
 ];
 
 export default function PlaygroundSection() {
   const [stickers, setStickers] = useState([
-    { id: 1, text: "DATA DRIVEN 📊", x: 20, y: 30, rotation: -6, bg: "#fde047" },
-    { id: 2, text: "SQL QUERY MASTER 🔍", x: 180, y: 40, rotation: 7, bg: "#a7f3d0" },
-    { id: 3, text: "GAP ANALYSIS ⚙️", x: 60, y: 130, rotation: -4, bg: "#fbcfe8" },
-    { id: 4, text: "BRD APPROVED ✅", x: 220, y: 120, rotation: 5, bg: "#fed7aa" }
+    { id: 1, text: "POWER BI & DAX 📊", x: 20, y: 30, rotation: -6, bg: "#fde047" },
+    { id: 2, text: "RANDOM FOREST 🤖", x: 180, y: 40, rotation: 7, bg: "#a7f3d0" },
+    { id: 3, text: "MEDIAPIPE CV 👁️", x: 60, y: 130, rotation: -4, bg: "#fbcfe8" },
+    { id: 4, text: "AMEENA FATHIMA ✨", x: 220, y: 120, rotation: 5, bg: "#ddd6fe" }
   ]);
 
   const [activeSticker, setActiveSticker] = useState(null);

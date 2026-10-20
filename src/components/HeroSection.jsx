@@ -67,8 +67,8 @@ export default function HeroSection({ designer, onContactClick }) {
 
       {/* Headline with Flanking Avatar Stamps */}
       <div className="headline-row">
-        <div className="avatar-stamp" title="Robin in the mountains">
-          <img src={designer.avatar} alt="Robin" />
+        <div className="avatar-stamp" title="Ameena Fathima">
+          <img src={designer.avatar} alt="Ameena Fathima" />
         </div>
 
         <h2 className="main-tagline">
@@ -77,8 +77,8 @@ export default function HeroSection({ designer, onContactClick }) {
           {designer.tagline.line2} <span className="emoji-icon">📈</span>
         </h2>
 
-        <div className="avatar-stamp" title="Robin">
-          <img src={designer.avatar} alt="Robin" />
+        <div className="avatar-stamp" title="Ameena Fathima">
+          <img src={designer.avatar} alt="Ameena Fathima" />
         </div>
       </div>
 

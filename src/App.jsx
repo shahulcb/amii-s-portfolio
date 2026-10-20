@@ -57,7 +57,7 @@ export default function App() {
     }
   };
 
-  const handleSkillClick = (skill) => {
+  const handleSkillClick = (_skill) => {
     // Jump to projects and filter or open first matching project
     handleNavigate('projects');
   };

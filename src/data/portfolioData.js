@@ -1,175 +1,208 @@
 export const portfolioData = {
   designer: {
-    name: "ROBIN",
-    role: "Business Analyst",
-    location: "Chicago, IL",
-    status: "OPEN TO FULL-TIME BA ROLES & RECRUITER INQUIRIES",
+    name: "AMEENA FATHIMA",
+    role: "Data Analyst & ML Engineer",
+    location: "Open to Remote & Worldwide",
+    status: "OPEN TO DATA ANALYST & ML ENGINEER ROLES",
     tagline: {
-      line1: "I turn complex data",
-      line2: "into decisions that move teams."
+      line1: "I turn complex datasets",
+      line2: "into intelligent, impactful models."
     },
-    bio: "I'm a business analyst who loves diving deep into business workflows, analyzing complex datasets, and collaborating with cross-functional product & engineering teams to deliver high-impact systems. 📊 This site showcases my end-to-end case studies, technical requirements, and process artifacts. If you're a recruiter or hiring manager looking for a dedicated Business Analyst, let's connect! 🤝",
-    avatar: "/images/robin-avatar.jpg",
+    bio: "I'm a Data Analyst & Machine Learning Engineer passionate about translating raw, multi-source data into executive business intelligence dashboards, predictive ML pipelines, and real-time computer vision systems. 📊 From building interactive Power BI dashboards with DAX to training Scikit-Learn pipelines and tracking facial mesh coordinates with OpenCV & MediaPipe, I build data-driven tools that solve real problems. Let's connect! 🤝",
+    avatar: "/images/ameena-avatar.jpg",
     workspace: "/images/workspace.jpg",
-    email: "robin.analyst@example.com",
-    availability: "Open to Full-Time Business Analyst Roles (On-site Chicago / Hybrid / Remote)",
+    email: "ameenafathimawork@gmail.com",
+    availability: "Open to Full-Time Data Analyst & ML Engineer Roles (Remote / Hybrid)",
     resumeUrl: "#",
     socials: {
+      github: "https://github.com/ameenafathimawork",
       linkedin: "https://linkedin.com",
-      dribbble: "https://dribbble.com",
-      instagram: "https://instagram.com",
-      github: "https://github.com",
-      twitter: "https://twitter.com"
+      email: "mailto:ameenafathimawork@gmail.com"
     }
   },
 
   skills: [
     {
-      id: "requirements",
-      name: "Requirements Gathering",
+      id: "power-bi",
+      name: "Power BI & DAX",
       color: "#fbbf24",
       bgClass: "pill-yellow",
-      icon: "clipboard",
-      stampEmoji: "📋",
-      description: "Authoring comprehensive BRDs, PRDs, user stories, and acceptance criteria (Given-When-Then) that bridge business stakeholders and engineers."
+      icon: "bar-chart-2",
+      stampEmoji: "📊",
+      description: "Data modeling, Power Query transformations, DAX calculated measures, KPI scorecards, and interactive drill-down reports."
     },
     {
-      id: "modeling",
-      name: "Data & Financial Modeling",
+      id: "machine-learning",
+      name: "Machine Learning & Scikit-Learn",
       color: "#10b981",
       bgClass: "pill-green",
-      icon: "trending-up",
-      stampEmoji: "📊",
-      description: "Advanced SQL, scenario modeling, forecasting, ROI feasibility analysis, and automated KPI pipelines."
+      icon: "cpu",
+      stampEmoji: "🤖",
+      description: "Random Forest classification, ColumnTransformer pipelines, class imbalance resolution, cross-validation, and model serialization with Joblib."
     },
     {
-      id: "process",
-      name: "Process Optimization",
+      id: "computer-vision",
+      name: "Computer Vision & OpenCV",
       color: "#ec4899",
       bgClass: "pill-pink",
-      icon: "git-branch",
-      stampEmoji: "⚙️",
-      description: "BPMN 2.0 mapping, gap analysis, root-cause diagnostics, and workflow automation reducing cycle times."
+      icon: "eye",
+      stampEmoji: "👁️",
+      description: "MediaPipe Face Mesh (468 keypoints), real-time video feed capture, geometric ratio iris tracking, and orientation classification at 60 FPS."
     },
     {
-      id: "stakeholder",
-      name: "Stakeholder Alignment",
+      id: "python-analytics",
+      name: "Python & Streamlit",
       color: "#2563eb",
       bgClass: "pill-blue",
-      icon: "users",
-      stampEmoji: "🤝",
-      description: "Facilitating discovery workshops, executive dashboard presentations (Tableau/Power BI), and sprint backlog prioritization."
+      icon: "terminal",
+      stampEmoji: "🐍",
+      description: "Pandas & NumPy data wrangling, exploratory data analysis, interactive Streamlit web applications, and automated metric evaluation."
     }
   ],
 
   projects: [
     {
-      id: "tandem",
+      id: "hospital-dashboard",
       number: "01",
       tabLabel: "PROJECT 01",
-      date: "MAR 2, 2026",
-      title: "FinFlow Ledger",
-      subtitle: "From manual reconciliation to 99.8% automated straight-through ledger settlement.",
-      category: "Fintech & Financial Operations Analytics",
+      date: "POWER BI & DAX",
+      title: "Hospital Management Dashboard",
+      subtitle: "Comprehensive healthcare intelligence dashboard tracking department volume, patient length of stay, and doctor billing revenue.",
+      category: "Power BI Project",
+      projectType: "Power BI Project",
       theme: "dark",
       heroBg: "#0f1115",
-      accentColor: "#2563eb",
-      badgeColor: "#3b82f6",
-      image: "/images/tandem.jpg",
-      tags: ["SQL & ETL", "BPMN 2.0 Mapping", "Financial Modeling", "BRD / User Stories"],
+      accentColor: "#0284c7",
+      badgeColor: "#38bdf8",
+      image: "/images/hospital-dashboard.jpg",
+      technologies: ["Power BI", "DAX", "Power Query", "Data Modeling"],
+      tags: ["Power BI", "DAX Measures", "Power Query", "Data Modeling", "Healthcare KPI"],
+      githubUrl: "https://github.com/ameenafathimawork/hospital-management-dashboard",
+      liveUrl: "https://app.powerbi.com/",
       stats: [
-        { label: "Reconciliation Speed", value: "4.5x faster" },
-        { label: "Annual Cost Saved", value: "$1.2M" },
-        { label: "Ledger SLA Accuracy", value: "99.8%" }
+        { label: "Total Revenue Tracked", value: "$14.2M" },
+        { label: "Total Patients Analyzed", value: "48,500+" },
+        { label: "Avg Length of Stay", value: "4.1 Days" }
       ],
-      overview: "FinFlow is an enterprise payment reconciliation system engineered to eliminate manual multi-currency debt mismatches. As the Lead Business Analyst, I scoped end-to-end business requirements, standardized ledger data schemas across 5 banking partners, and architected automated anomaly-detection workflows.",
-      problem: "The operations team lost 180+ hours each month manually cross-referencing multi-currency bank statements with PostgreSQL transactional databases, causing multi-day settlement delays and audit vulnerability.",
-      solution: "Defined rule-based auto-reconciliation specifications, mapped AS-IS vs. TO-BE processes, and designed real-time exception dashboards with automated notifications for discrepancies over $1,000.",
+      bulletPoints: [
+        "Technologies Used: Power BI, DAX, Power Query, Data Modeling.",
+        "Created KPI cards for Total Revenue, Total Patients, and Avg Length of Stay using DAX measures.",
+        "Built clustered bar charts to analyze patient volume and revenue generated across departments.",
+        "Designed a doctor performance table tracking patient count and billing revenue per physician.",
+        "Plotted monthly admission trends over time using line charts and date hierarchies.",
+        "Added interactive slicers to filter all dashboard visuals by patient gender and discharge outcome.",
+        "Visualized patient volume, inpatient duration, and revenue trends using an area chart."
+      ],
+      overview: "An enterprise-grade healthcare performance dashboard developed in Power BI to streamline clinical operations and financial monitoring. Leveraging multi-table star-schema data modeling in Power Query and optimized DAX calculations, the dashboard equips medical administrators with real-time KPI metrics, department capacity tracking, and physician billing analytics.",
+      problem: "Hospital operations relied on fragmented spreadsheets, causing delayed insight into department patient volume bottlenecks, fluctuating length of stay (ALOS), and lack of standardized physician revenue accountability.",
+      solution: "Architected a unified Power BI report with interactive cross-filtering slicers (by patient gender and discharge outcome), dynamic DAX measures for core KPIs, clustered bar charts for department volumes, and temporal area charts mapping admission flows.",
       deliverables: [
-        "Business Requirements Document (BRD) & Functional Specs",
-        "BPMN 2.0 Process Workflow Maps",
-        "Data Dictionary & Cross-Platform Entity Relationship Model",
-        "User Acceptance Testing (UAT) Test Plan & Sign-off Matrix"
+        "Interactive Power BI Dashboard with Real-Time DAX KPI Cards",
+        "Departmental Volume & Revenue Clustered Bar Visualizations",
+        "Doctor Performance & Billing Leaderboard Table",
+        "Multi-Dimensional Patient Slicers (Gender, Discharge Status, Date Hierarchies)"
       ],
       prototypeData: {
-        type: "reconciliation",
-        monthlyTransactions: 24000,
-        manualHourlyCost: 45,
-        hoursSavedPerMonth: 160,
-        discrepancyThreshold: 1000
+        type: "healthcare",
+        defaultDept: "Cardiology",
+        defaultVolume: 12400,
+        avgStay: 4.1,
+        billingPerPatient: 290
       }
     },
     {
-      id: "forge",
+      id: "employee-attrition",
       number: "02",
       tabLabel: "PROJECT 02",
-      date: "JAN 2, 2026",
-      title: "Forge Ops",
-      subtitle: "Diagnosing delivery bottlenecks and boosting sprint predictability by 42%.",
-      category: "Agile Delivery & Engineering Velocity Analytics",
+      date: "MACHINE LEARNING",
+      title: "Employee Attrition Prediction",
+      subtitle: "Predictive machine learning pipeline and interactive Streamlit web app anticipating workforce turnover.",
+      category: "Machine Learning Project",
+      projectType: "Machine Learning Project",
       theme: "yellow",
       heroBg: "#f5be38",
       accentColor: "#18181b",
       badgeColor: "#000000",
-      image: "/images/forge.jpg",
-      tags: ["Agile Scrum", "Jira Analytics", "Capacity Planning", "UAT Framework"],
+      image: "/images/attrition-prediction.jpg",
+      technologies: ["Python", "Pandas", "Scikit-Learn", "Random Forest", "Streamlit", "Joblib"],
+      tags: ["Python", "Pandas", "Scikit-Learn", "Random Forest", "Streamlit", "Joblib"],
+      githubUrl: "https://github.com/ameenafathimawork/employee-attrition-prediction",
+      liveUrl: "https://github.com/ameenafathimawork/employee-attrition-prediction",
       stats: [
-        { label: "Sprint Predictability", value: "+42%" },
-        { label: "Cycle Time Reduction", value: "-3.4 days" },
-        { label: "UAT Defect Leakage", value: "< 2.1%" }
+        { label: "Dataset Processed", value: "10,000 Rows" },
+        { label: "Classification Model", value: "Random Forest" },
+        { label: "Inference Latency", value: "< 20ms" }
       ],
-      overview: "Forge Ops is an engineering workflow optimization initiative spanning 14 squads. As the Business Analyst, I conducted value-stream mapping, analyzed 18 months of Jira delivery data, and aligned product management and engineering leadership on objective story sizing and capacity planning.",
-      problem: "Engineering squads suffered from 38% scope churn mid-sprint, delayed release milestones, and unclear acceptance criteria that generated endless revision loops between QA and developers.",
-      solution: "Standardized Given-When-Then Gherkin acceptance criteria, automated Jira-to-Tableau burn-up reports, and instituted pre-sprint Definition of Ready (DoR) gate reviews.",
+      bulletPoints: [
+        "Technologies Used: Python, Pandas, Scikit-Learn, Random Forest, Streamlit, Joblib.",
+        "Cleaned and preprocessed a 10,000-row employee dataset, removing constant identifier columns.",
+        "Trained a Random Forest Classifier with balanced class weights using a stratified 80/20 train-test split.",
+        "Built a Scikit-Learn Pipeline combining ColumnTransformer, StandardScaler, and OneHotEncoder.",
+        "Developed an interactive Streamlit web app allowing users to input employee attributes.",
+        "Generated real-time attrition risk assessments and likelihood probabilities via model serialization."
+      ],
+      overview: "An end-to-end Machine Learning solution designed to help human resource leaders predict employee resignation risks before departures occur. Featuring a clean Scikit-Learn pipeline and serialized via Joblib, the system provides zero-latency probability scores and feature attribution through an intuitive Streamlit interface.",
+      problem: "Unanticipated employee churn drives recruitment costs and damages team velocity. HR lacked proactive diagnostic tools to identify at-risk personnel based on multidimensional indicators like overtime, compensation, and role tenure.",
+      solution: "Engineered an automated preprocessing pipeline on a 10,000-row dataset, addressed class imbalance using balanced Random Forest estimators, and deployed the trained model into a user-friendly Streamlit web app for instant risk evaluation.",
       deliverables: [
-        "Value Stream Mapping & Bottleneck Diagnosis Report",
-        "Standardized Epic & User Story Template Suite",
-        "Executive Velocity & Capacity Allocation Dashboard",
-        "Change Management Playbook & Team Training Curriculum"
+        "Data Preprocessing & Feature Engineering Pipeline (ColumnTransformer)",
+        "Trained Random Forest Classifier with Stratified Cross-Validation",
+        "Serialized Model Artifact (.joblib) for Instant Inference",
+        "Interactive Streamlit Application with Real-Time Risk Probability Gauges"
       ],
       prototypeData: {
-        type: "agile",
-        sprintTargetPoints: 65,
-        initialPlanned: 60,
-        scopeCreepPoints: 15,
-        milestones: [
-          { id: 1, title: "Stakeholder Discovery & Problem Definition", status: "completed" },
-          { id: 2, title: "Historical Jira Delivery Data Extraction & SQL Querying", status: "completed" },
-          { id: 3, title: "AS-IS Process Flowchart & Value Stream Map", status: "completed" },
-          { id: 4, title: "Draft BRD & User Stories with Acceptance Criteria", status: "active" },
-          { id: 5, title: "UAT Test Scripts Execution & Defect Triage", status: "pending" },
-          { id: 6, title: "Post-Implementation ROI & Velocity Audit", status: "pending" }
-        ]
+        type: "attrition",
+        defaultOvertime: "Yes",
+        defaultMonthlyIncome: 4800,
+        defaultTenure: 3,
+        defaultSatisfaction: 2
       }
     },
     {
-      id: "nebula",
+      id: "eye-gaze",
       number: "03",
       tabLabel: "PROJECT 03",
-      date: "NOV 18, 2025",
-      title: "Prism BI",
-      subtitle: "Translating 14M customer touchpoints into an executive retention and churn forecasting system.",
-      category: "Business Intelligence & Churn Analytics",
+      date: "COMPUTER VISION",
+      title: "Real-Time Eye Gaze Direction Detection",
+      subtitle: "High-precision iris coordinate tracking & gaze orientation classification running at 60 FPS.",
+      category: "Computer Vision Project",
+      projectType: "Computer Vision Project",
       theme: "dark-purple",
-      heroBg: "#1a162b",
-      accentColor: "#8b5cf6",
-      badgeColor: "#7c3aed",
-      image: "/images/prism.jpg",
-      tags: ["Power BI / Tableau", "SQL Cohort Analysis", "Churn Risk Modeling", "Executive Strategy"],
+      heroBg: "#0f172a",
+      accentColor: "#06b6d4",
+      badgeColor: "#0ea5e9",
+      image: "/images/eye-gaze.jpg",
+      technologies: ["Python", "OpenCV", "MediaPipe Face Mesh"],
+      tags: ["Python", "OpenCV", "MediaPipe", "Computer Vision", "Face Mesh", "Iris Tracking"],
+      githubUrl: "https://github.com/ameenafathimawork/eyenew",
+      liveUrl: "https://github.com/ameenafathimawork/eyenew",
       stats: [
-        { label: "ARR Churn Mitigated", value: "$2.4M" },
-        { label: "At-Risk Flag Accuracy", value: "91.4%" },
-        { label: "C-Suite Dashboard Adoption", value: "100%" }
+        { label: "Facial Landmarks", value: "468+ Points" },
+        { label: "Gaze Orientations", value: "5 Directions" },
+        { label: "Processing Speed", value: "60 FPS" }
       ],
-      overview: "Prism BI unified fragmented CRM, Stripe billing, and product usage telemetries into an executive-facing early warning churn forecasting dashboard. Defined metric definitions, data governance standards, and customer retention triggers.",
-      problem: "Enterprise customer churn was noticed only after contract renewal cancellation. Cross-functional sales, customer success, and product teams lacked a unified definition of an 'active account'.",
-      solution: "Formulated a composite Health Score algorithm (0-100), automated daily alerts for at-risk accounts showing 30-day inactivity drops, and provided customer success teams with proactive retention action playbooks.",
+      bulletPoints: [
+        "Technologies Used: Python, OpenCV, MediaPipe Face Mesh.",
+        "Captured and processed live webcam video feeds using OpenCV with horizontal flip and RGB conversion.",
+        "Extracted 468+ facial keypoints and iris coordinates using MediaPipe Face Mesh.",
+        "Built a geometric ratio algorithm measuring iris offset relative to eyelid and eye corner boundaries.",
+        "Classified gaze into 5 orientations (Left, Right, Up, Down, Center) using normalized spatial thresholds.",
+        "Handled zero-division errors for eye closures and displayed real-time text predictions on video."
+      ],
+      overview: "A lightweight, real-time Computer Vision system capable of classifying eye gaze orientation directly from standard webcam video without requiring specialized hardware or eye trackers. Built on MediaPipe Face Mesh's 468 3D landmark mesh, the algorithm computes geometric iris offsets against eyelid anchors to classify gaze into 5 distinct orientations.",
+      problem: "Traditional gaze estimation relies on costly infrared sensors or heavy deep neural nets that suffer latency on standard laptops and trigger crash exceptions when subjects blink or look away.",
+      solution: "Developed an efficient geometric iris offset ratio algorithm with zero-division error handling for eye closures, delivering real-time predictions at 60 FPS with horizontal flip for intuitive mirror tracking.",
       deliverables: [
-        "Customer Health Score Metric Definition & Data Dictionary",
-        "Interactive Power BI Dashboard with Drill-Down Filters",
-        "Automated Slack / Email Alert Integration Schema",
-        "Executive Board Presentation on Retention Strategy"
-      ]
+        "OpenCV Live Video Capture & RGB Frame Transformation Pipeline",
+        "MediaPipe 468-Point Face Mesh & Iris Landmark Extractor",
+        "Spatial Geometric Ratio Algorithm for 5-Orientation Gaze Classification",
+        "Robust Eye Closure Exception Handler & Real-Time On-Screen Telemetry HUD"
+      ],
+      prototypeData: {
+        type: "eyegaze",
+        orientations: ["Center", "Left", "Right", "Up", "Down"],
+        defaultGaze: "Center"
+      }
     }
   ],
 
@@ -177,23 +210,23 @@ export const portfolioData = {
     {
       id: "sticker-1",
       type: "sticker",
-      text: "DATA DRIVEN 📊",
+      text: "POWER BI & DAX 📊",
       bg: "#fde047",
       color: "#000",
-      rotation: -6
+      rotation: -5
     },
     {
       id: "sticker-2",
       type: "sticker",
-      text: "SQL QUERY MASTER 🔍",
+      text: "SCIKIT-LEARN ML 🤖",
       bg: "#a7f3d0",
       color: "#000",
-      rotation: 8
+      rotation: 7
     },
     {
       id: "sticker-3",
       type: "sticker",
-      text: "GAP ANALYSIS ⚙️",
+      text: "MEDIAPIPE CV 👁️",
       bg: "#fbcfe8",
       color: "#000",
       rotation: -3
@@ -201,10 +234,10 @@ export const portfolioData = {
     {
       id: "sticker-4",
       type: "sticker",
-      text: "BRD APPROVED ✅",
+      text: "AMEENA FATHIMA ✨",
       bg: "#fed7aa",
       color: "#000",
-      rotation: 5
+      rotation: 4
     }
   ]
 };

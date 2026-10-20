@@ -21,7 +21,7 @@ export default function Navbar({ activeSection, onNavigate, onOpenContact }) {
         <div className="nav-left">
           <div 
             className="nav-avatar-badge" 
-            title="Robin • Business Analyst"
+            title="Ameena Fathima • Data Analyst & ML Engineer"
             onClick={() => handleNavClick('home')}
           >
             <span style={{ fontSize: '11px', color: '#fff', fontWeight: 'bold' }}>✦</span>
@@ -53,7 +53,7 @@ export default function Navbar({ activeSection, onNavigate, onOpenContact }) {
               onClick={() => handleNavClick('projects')}
             >
               <LayoutGrid size={11} strokeWidth={2.5} />
-              <span>CASE STUDY</span>
+              <span>PROJECTS</span>
             </button>
 
             <button
@@ -68,15 +68,25 @@ export default function Navbar({ activeSection, onNavigate, onOpenContact }) {
 
           {/* Mobile active indicator title */}
           <div className="mobile-brand-title mobile-only" onClick={() => handleNavClick('home')}>
-            <span className="brand-pixel-name">ROBIN</span>
+            <span className="brand-pixel-name">AMEENA</span>
             <span className="brand-dot">•</span>
-            <span className="brand-role-text">BA</span>
+            <span className="brand-role-text">DATA/ML</span>
           </div>
         </div>
 
         {/* Right: Social icons & Contact Button (Desktop) + Mobile Menu Toggle */}
         <div className="nav-right">
           <div className="social-links desktop-only">
+            <a
+              href="https://github.com/ameenafathimawork"
+              target="_blank"
+              rel="noreferrer"
+              className="social-circle social-linkedin"
+              title="GitHub Profile"
+              style={{ background: '#111418', color: '#ffffff', fontWeight: '700' }}
+            >
+              gh
+            </a>
             <a
               href="https://linkedin.com"
               target="_blank"
@@ -87,22 +97,11 @@ export default function Navbar({ activeSection, onNavigate, onOpenContact }) {
               in
             </a>
             <a
-              href="https://dribbble.com"
-              target="_blank"
-              rel="noreferrer"
-              className="social-circle social-dribbble"
-              title="Dribbble"
-            >
-              dr
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noreferrer"
+              href="mailto:ameenafathimawork@gmail.com"
               className="social-circle social-instagram"
-              title="Instagram"
+              title="Email Ameena"
             >
-              ig
+              @
             </a>
           </div>
 
@@ -184,11 +183,11 @@ export default function Navbar({ activeSection, onNavigate, onOpenContact }) {
           {/* Mobile Socials & Direct Contact */}
           <div className="mobile-dropdown-bottom">
             <div className="mobile-socials-row">
-              <span className="mobile-socials-label">FIND ME:</span>
+              <span className="mobile-socials-label">CONNECT:</span>
               <div className="social-links-mobile">
+                <a href="https://github.com/ameenafathimawork" target="_blank" rel="noreferrer" className="social-circle social-linkedin" title="GitHub" style={{ background: '#111418', color: '#ffffff', fontWeight: '700' }}>gh</a>
                 <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="social-circle social-linkedin" title="LinkedIn">in</a>
-                <a href="https://dribbble.com" target="_blank" rel="noreferrer" className="social-circle social-dribbble" title="Dribbble">dr</a>
-                <a href="https://instagram.com" target="_blank" rel="noreferrer" className="social-circle social-instagram" title="Instagram">ig</a>
+                <a href="mailto:ameenafathimawork@gmail.com" className="social-circle social-instagram" title="Email Ameena">@</a>
               </div>
             </div>
 

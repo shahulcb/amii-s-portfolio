@@ -26,14 +26,14 @@ export default function AboutSection({ designer, skills, onSkillClick }) {
 
         {/* 3-Column Content Grid: Left Polaroid, Center Text & Badges, Right Polaroid */}
         <div className="about-content-grid">
-          {/* Left Polaroid: Robin Portrait with Washi Tape */}
-          <div className="polaroid-card polaroid-left" title="Robin in the Pacific Northwest">
+          {/* Left Polaroid: Ameena Portrait with Washi Tape */}
+          <div className="polaroid-card polaroid-left" title="Ameena Fathima">
             <div className="washi-tape tape-top-left"></div>
             <div className="washi-tape tape-bottom-right"></div>
             <div className="polaroid-img-wrapper">
-              <img src={designer.avatar} alt="Robin outdoors" />
+              <img src={designer.avatar} alt="Ameena Fathima" />
             </div>
-            <div className="polaroid-caption">1016</div>
+            <div className="polaroid-caption">ameena ✨</div>
           </div>
 
           {/* Center Column: Handwritten bio + 4 Scalloped / Wavy Badges */}
@@ -67,13 +67,13 @@ export default function AboutSection({ designer, skills, onSkillClick }) {
           </div>
 
           {/* Right Polaroid: Workspace Desk Setup with Washi Tape */}
-          <div className="polaroid-card polaroid-right" title="Robin's Studio Workspace">
+          <div className="polaroid-card polaroid-right" title="Ameena's Data & ML Workspace">
             <div className="washi-tape tape-top-left"></div>
             <div className="washi-tape tape-top-right"></div>
             <div className="polaroid-img-wrapper">
-              <img src={designer.workspace} alt="My Workspace" />
+              <img src={designer.workspace} alt="Ameena's Workspace" />
             </div>
-            <div className="polaroid-caption">my workspace</div>
+            <div className="polaroid-caption">my workspace 💻</div>
           </div>
         </div>
       </section>
